@@ -9,6 +9,7 @@ export class Movie extends Component {
 
     handleDelete = (movie) => {
         const movies = this.state.movies.filter(m => m._id !== movie._id);
+        console.log(movies);
         this.setState({movies});
     }
 
@@ -52,4 +53,6 @@ export class Movie extends Component {
         );
     }
 }
+
+export default Movie;
 
