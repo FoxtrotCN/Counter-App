@@ -11,12 +11,12 @@ class Counter extends Component {
     //     this.handleIncrement = this.handleIncrement.bind(this);
     // }
 
-    renderingTags() {
-        if (this.state.tags.length === 0)
-            return <p>There is no tags!</p>
-        else
-            return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
-    }
+    // renderingTags() {
+    //     if (this.state.tags.length === 0)
+    //         return <p>There is no tags!</p>
+    //     else
+    //         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+    // }
 
     handleIncrement = product => {
         console.log(product);
@@ -28,11 +28,12 @@ class Counter extends Component {
             <div>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button
-                    onClick={() => this.handleIncrement(product)}
+                    // onClick={() => this.handleIncrement(product)}
+                    onClick={() => this.handleIncrement(this.props)}
                     className="btn btn-secondary btn-sm">
                     Increment
                 </button>
-                {this.renderingTags()}
+                {/*{this.renderingTags()}*/}
 
             </div>
         );
