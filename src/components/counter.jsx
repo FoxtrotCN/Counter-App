@@ -1,28 +1,7 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-    // state = {
-    //     value: this.props.counter.value,
-    // };
-
-    // constructor() {
-    //     super();
-    //     this.handleIncrement = this.handleIncrement.bind(this);
-    // }
-
-    // renderingTags() {
-    //     if (this.state.tags.length === 0)
-    //         return <p>There is no tags!</p>
-    //     else
-    //         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
-    // }
-
-    // handleIncrement = () => {
-    //     this.setState({ value: this.state.value + 1 });
-    // };
-
     render() {
-
         return (
             <div>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
@@ -55,3 +34,24 @@ class Counter extends Component {
 }
 
 export default Counter;
+
+
+// state = {
+//     value: this.props.counter.value,
+// };
+
+// constructor() {
+//     super();
+//     this.handleIncrement = this.handleIncrement.bind(this);
+// }
+
+// renderingTags() {
+//     if (this.state.tags.length === 0)
+//         return <p>There is no tags!</p>
+//     else
+//         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+// }
+
+// handleIncrement = () => {
+//     this.setState({ value: this.state.value + 1 });
+// };
