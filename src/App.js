@@ -1,11 +1,7 @@
 import './App.css';
-// import React, {Component} from "react";
 import React, {useState} from "react";
 import Counters from "./components/counters";
-import Navbar from "./components/navbar";
-
-
-
+import NavBar from "./components/navbar";
 
 
 function App() {
@@ -39,9 +35,13 @@ function App() {
         setState({counters});
     }
 
+    let totalCounters = () => {
+        return state.counters.filter(c => c.value > 0).length;
+    }
+
   return (
       <div>
-        <Navbar/>
+        <NavBar totalCounters={totalCounters()}/>
         <main className="container">
           <Counters
               counters={state.counters}
