@@ -22,6 +22,14 @@ function App() {
         setState({ counters })
     }
 
+    let handleDecrement = counter => {
+        const counters = [...state.counters];
+        const index = counters.indexOf(counter);
+        counters[index] = {...counter};
+        counters[index].value--;
+        setState({counters});
+    }
+
     let handleReset = () => {
         const counters = state.counters.map(c => {
             c.value = 0
@@ -47,6 +55,7 @@ function App() {
               counters={state.counters}
               onReset={handleReset}
               onIncrement={handleIncrement}
+              onDecrement={handleDecrement}
               onDelete={handleDelete}/>
         </main>
       </div>
