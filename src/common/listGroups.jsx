@@ -1,13 +1,16 @@
 import React from "react";
 
 
-const ListGroups = () => {
+const ListGroups = props => {
+    const {items, textProperty, valueProperty} = props;
     return (
         <ul className="list-group">
-            <li className="list-group-item">All ergh</li>
-            <li className="list-group-item">rgrgg</li>
-            <li className="list-group-item">svgasgsdfg</li>
-            <li className="list-group-item">sdasgag</li>
+            {items.map((item) =>
+                <li
+                    key={item[valueProperty]}
+                    className="list-group-item">
+                    {item[textProperty]}
+                </li>)}
         </ul>
     )
 }
