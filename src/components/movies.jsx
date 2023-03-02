@@ -47,14 +47,14 @@ export class Movie extends Component {
         const movies = paginate(allMovies, currentPage, pageSize)
 
         return (
+
             <div className="row">
                 <div className="col-3">
                     <ListGroups
                         items={this.state.genres}
-                        textProperty="name"
-                        valueProperty="_id"
                         onItemSelec={this.handleGenreSelect}/>
                 </div>
+
                 <div className="col">
                     <p>Showing {count} movies.</p>
                     <table className="table">
@@ -87,7 +87,9 @@ export class Movie extends Component {
                             </tr>
                         ))}
                         </tbody>
+
                     </table>
+
                     <Pagination
                         itemsCount={count}
                         pageSize={pageSize}
