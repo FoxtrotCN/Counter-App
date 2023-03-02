@@ -1,4 +1,5 @@
 import React from "react";
+import ProTypes from 'prop-types';
 import _ from 'lodash'; // underscore
 
 const Pagination = props => {
@@ -24,5 +25,12 @@ const Pagination = props => {
         </nav>
     )
 }
+
+Pagination.propTypes = {
+    itemsCount: ProTypes.number.isRequired,
+    pageSize: ProTypes.number.isRequired,
+    currentPage: ProTypes.number.isRequired,
+    onPageChange: ProTypes.func.isRequired
+};
 
 export default Pagination
