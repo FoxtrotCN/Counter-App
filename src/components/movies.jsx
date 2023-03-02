@@ -7,6 +7,7 @@ import Pagination from "../common/pagination";
 export class Movie extends Component {
     state = {
         movies: getMovies(),
+        currentPage: 1,
         pageSize: 4,
     };
 
@@ -24,11 +25,12 @@ export class Movie extends Component {
     };
 
     handlePageChange = page => {
-        console.log(page);
+        this.setState({currentPage: page});
     }
 
     render() {
         const {length: count} = this.state.movies;
+        const {pageSize, currentPage} = this.state;
         if (count === 0)
             return <p>There is no movies in the database.</p>;
 
@@ -67,7 +69,11 @@ export class Movie extends Component {
                     ))}
                     </tbody>
                 </table>
-                <Pagination itemsCount={count} pageSize={10} onPageChange={this.handlePageChange}/>
+                <Pagination
+                    itemsCount={count}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
+                    onPageChange={this.handlePageChange}/>
             </React.Fragment>
         );
     }
