@@ -16,7 +16,7 @@ export class Movie extends Component {
     };
 
     componentDidMount() {
-        const genres = [{name: 'All Genres'}, ...getGenres()]
+        const genres = [{_id: '', name: 'All Genres'}, ...getGenres()]
         this.setState({movies: getMovies(), genres})
     }
 
@@ -41,7 +41,12 @@ export class Movie extends Component {
         this.setState({selectedGenre: genre, currentPage: 1});
     }
 
+    handleSort = path => {
+        console.log(path);
+    }
+
     render() {
+
         const {length: count} = this.state.movies;
         const {pageSize, currentPage, selectedGenre, movies: allMovies} = this.state;
         if (count === 0) return <p>There is no movies in the database.</p>;
@@ -68,7 +73,8 @@ export class Movie extends Component {
                     <MoviesTable
                         movies={movies}
                         onLike={this.handleLike}
-                        onDelete={this.handleDelete}/>
+                        onDelete={this.handleDelete}
+                        onSort={this.handleSort}/>
 
                     <Pagination
                         itemsCount={filtered.length}
