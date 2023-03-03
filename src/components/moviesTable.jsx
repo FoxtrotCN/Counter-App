@@ -3,6 +3,8 @@ import Like from "../common/like";
 // import TableHeader from "../common/tableHeader";
 // import TableBody from "../common/tableBody";
 import Table from "../common/table";
+
+
 export class MoviesTable extends Component {
     columns = [
         {path: 'title', label: 'Title'},
@@ -29,9 +31,10 @@ export class MoviesTable extends Component {
 
         return (
             <Table columns={this.columns}
-                   movies={movies}
+                   data={movies}
                    onSort={onSort}
-                   sortColumn={sortColumn}/>
+                   sortColumn={sortColumn}
+            />
         )
     }
 }
